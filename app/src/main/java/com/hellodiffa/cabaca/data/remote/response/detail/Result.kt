@@ -29,7 +29,7 @@ data class Result(
 	val urlLanding: String? = null,
 
 	@Json(name="title")
-	val title: String? = null,
+	val title: String,
 
 	@Json(name="download")
 	val download: Any? = null,
@@ -56,7 +56,7 @@ data class Result(
 	val bookUrl: String? = null,
 
 	@Json(name="id")
-	val id: Int? = null,
+	val id: Int,
 
 	@Json(name="full_purchase")
 	val fullPurchase: Boolean? = null,
@@ -80,13 +80,13 @@ data class Result(
 	val decimalRate: Int? = null,
 
 	@Json(name="cover_url")
-	val coverUrl: String? = null,
+	val coverUrl: String,
 
 	@Json(name="average_rate")
 	val averageRate: Int? = null,
 
 	@Json(name="synopsis")
-	val synopsis: String? = null,
+	val synopsis: String,
 
 	@Json(name="isNew")
 	val isNew: Boolean? = null,

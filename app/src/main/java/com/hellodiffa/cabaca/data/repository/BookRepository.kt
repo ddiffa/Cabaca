@@ -39,7 +39,7 @@ class BookRepository constructor(
 
     suspend fun loadBookByIdGenre(genreId: String) = remote.getBookByGenre(genreId)
 
-    suspend fun loadBooksDetail(bookId: String) = remote.getBookDetail(466)
+    suspend fun loadBooksDetail(bookId: String) = remote.getBookDetail(bookId)
 
     suspend fun loadWriterDetail(writerId: String) = remote.getWriterDetail(writerId)
 }

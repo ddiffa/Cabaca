@@ -30,7 +30,7 @@ interface ApiService {
     suspend fun getWriterDetail(@Path("user_id") id : String) : Response<WriterDetailResponse>
 
     @GET("api/v2/book/detail/{book_id}")
-    suspend fun getBookDetail(@Path("book_id") id : Long) : Response<DetailBookResponse>
+    suspend fun getBookDetail(@Path("book_id") id : String) : Response<DetailBookResponse>
 
     @GET("api/v2/book/uptodate?limit=7")
     suspend fun getNewBook() : Response<NewBookResponse>
