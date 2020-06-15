@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 data class BookByGenreResponse(
 
 	@Json(name="result")
-	val result: List<ResultItem?>? = null,
+	val result: List<ResultItem>,
 
 	@Json(name="test")
 	val test: Test? = null,

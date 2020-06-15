@@ -1,8 +1,5 @@
 package com.hellodiffa.cabaca.common
 
-/*
-* created by Diffa
- */
 
 data class ResultState<out T>(val status: Status, val data: T?, val message: String?) {
 

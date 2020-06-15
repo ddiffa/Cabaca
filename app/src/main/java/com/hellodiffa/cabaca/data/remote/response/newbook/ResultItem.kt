@@ -8,19 +8,19 @@ data class ResultItem(
 	val writerByWriterId: WriterByWriterId? = null,
 
     @Json(name="cover_url")
-	val coverUrl: String? = null,
+	val coverUrl: String,
 
     @Json(name="created_at")
 	val createdAt: String? = null,
 
     @Json(name="book_id")
-	val bookId: Int? = null,
+	val bookId: Long,
 
     @Json(name="isNew")
 	val isNew: Boolean? = null,
 
     @Json(name="title")
-	val title: String? = null,
+	val title: String,
 
     @Json(name="schedule_task")
 	val scheduleTask: String? = null,
@@ -29,13 +29,13 @@ data class ResultItem(
 	val isUpdate: Boolean? = null,
 
     @Json(name="id")
-	val id: Int? = null,
+	val id: Int,
 
     @Json(name="category")
 	val category: Any? = null,
 
     @Json(name="rate_sum")
-	val rateSum: Int? = null,
+	val rateSum: Double? = null,
 
     @Json(name="writer_id")
 	val writerId: Int? = null,

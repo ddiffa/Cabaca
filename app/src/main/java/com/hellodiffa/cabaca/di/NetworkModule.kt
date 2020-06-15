@@ -1,6 +1,7 @@
 package com.hellodiffa.cabaca.di
 
 import com.hellodiffa.cabaca.data.remote.ApiService
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -43,6 +44,7 @@ val networkModule = module {
         Retrofit.Builder()
             .client(get<OkHttpClient>())
             .addConverterFactory(MoshiConverterFactory.create(get<Moshi>()))
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .baseUrl(ApiService.BASE_URL)
             .build()
     }

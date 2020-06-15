@@ -80,7 +80,7 @@ data class Result(
 	val decimalRate: Int? = null,
 
 	@Json(name="cover_url")
-	val coverUrl: String? = null,
+	val coverUrl: String,
 
 	@Json(name="average_rate")
 	val averageRate: Int? = null,

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.hellodiffa.cabaca.ui.feature.menu.MenuFragment"
+        android:label="MenuFragment" >
+        <action
+            android:id="@+id/action_menuFragment_to_listBookFragment"
+            app:destination="@id/listBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listBookFragment"
+        android:name="com.hellodiffa.cabaca.ui.feature.listbook.ListBookFragment"
+        android:label="fragment_list_book"
+        tools:layout="@layout/fragment_list_book" >
+        <argument
+            android:name="genreId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/writerDetailFragment"
+        android:name="com.hellodiffa.cabaca.ui.feature.writerdetail.WriterDetailFragment"
+        android:label="WriterDetailFragment" >
+        <argument
+            android:name="writerid"
+            app:argType="long" />
+    </fragment>
+</navigation>

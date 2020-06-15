@@ -5,14 +5,14 @@ import com.squareup.moshi.Json
 data class ResourceItem(
 
 	@Json(name="icon_url")
-	val iconUrl: String? = null,
+	val iconUrl: String,
 
 	@Json(name="count")
-	val count: Int? = null,
+	val count: Int,
 
 	@Json(name="id")
-	val id: Int? = null,
+	val id: Long,
 
 	@Json(name="title")
-	val title: String? = null
+	val title: String
 )

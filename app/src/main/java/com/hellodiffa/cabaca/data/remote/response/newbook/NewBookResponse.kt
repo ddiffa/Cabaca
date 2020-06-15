@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 data class NewBookResponse(
 
     @Json(name="result")
-	val result: List<ResultItem?>? = null,
+	val result: List<ResultItem>,
 
     @Json(name="success")
 	val success: Boolean? = null,

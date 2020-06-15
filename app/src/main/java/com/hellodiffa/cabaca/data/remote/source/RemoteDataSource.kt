@@ -13,7 +13,7 @@ class RemoteDataSource constructor(private val apiService: ApiService) : BaseDat
         apiService.getWriterDetail(id)
     }
 
-    suspend fun getBookDetail(id: String) = getResult {
+    suspend fun getBookDetail(id: Long) = getResult {
         apiService.getBookDetail(id)
     }
 

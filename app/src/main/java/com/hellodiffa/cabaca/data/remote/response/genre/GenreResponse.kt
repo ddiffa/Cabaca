@@ -5,5 +5,5 @@ import com.squareup.moshi.Json
 data class GenreResponse(
 
 	@Json(name="resource")
-	val resource: List<ResourceItem?>? = null
+	val resource: List<ResourceItem>
 )
