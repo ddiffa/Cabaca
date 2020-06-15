@@ -1,0 +1,17 @@
+## Android development tools and architecture
+- Minimum SDK level 16
+- Kotlin based + Coroutines for asynchronous
+- Koin for dependency injection
+- Jetpack
+  - LiveData 
+  - ViewModel 
+  - Lifecycle 
+  - Room persistence 
+- Architecture
+  - MVVM Architecture (View - DataBinding - ViewModel - Model)
+  - Repository Pattern
+- Retrofit2 & Okhttp3
+- Moshi 
+- Glide 
+- Material Components 
+- Shimmer layout 
