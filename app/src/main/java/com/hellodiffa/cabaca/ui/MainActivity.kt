@@ -1,7 +1,8 @@
-package com.hellodiffa.cabaca
+package com.hellodiffa.cabaca.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hellodiffa.cabaca.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
