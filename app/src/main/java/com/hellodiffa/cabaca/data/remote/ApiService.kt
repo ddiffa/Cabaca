@@ -1,6 +1,7 @@
 package com.hellodiffa.cabaca.data.remote
 
 import com.hellodiffa.cabaca.data.remote.response.bookbygenre.BookByGenreResponse
+import com.hellodiffa.cabaca.data.remote.response.bookx.BooxResponse
 import com.hellodiffa.cabaca.data.remote.response.detail.DetailBookResponse
 import com.hellodiffa.cabaca.data.remote.response.detailbook.BookDetailResponse
 import com.hellodiffa.cabaca.data.remote.response.detailwriter.WriterDetailResponse

@@ -44,7 +44,6 @@ val networkModule = module {
         Retrofit.Builder()
             .client(get<OkHttpClient>())
             .addConverterFactory(MoshiConverterFactory.create(get<Moshi>()))
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .baseUrl(ApiService.BASE_URL)
             .build()
     }

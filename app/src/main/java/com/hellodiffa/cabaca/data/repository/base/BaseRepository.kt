@@ -34,5 +34,5 @@ abstract class BaseRepository() {
             source.apply {
                 emitAll(this)
             }
-        }.flowOn(Dispatchers.IO)
+        }
 }

@@ -29,7 +29,7 @@ data class Result(
 	val phone: String? = null,
 
 	@Json(name="karya")
-	val karya: List<KaryaItem?>? = null,
+	val karya: List<KaryaItem>,
 
 	@Json(name="name")
 	val name: String? = null,

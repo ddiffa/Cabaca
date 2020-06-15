@@ -53,13 +53,8 @@ class MenuFragment : BaseFragmentBinding() {
     }
 
     private fun onChildBookClick(item: BookEntity) {
-////        val intent = Intent(activity, DetailBookActivity::class.java)
-////        intent.putExtra("bookId", item.id.toString())
-////        startActivity(intent)
-//
-//        val action = MenuFragmentDirections.actionMenuFragmentToBookDetailFragment(item.id.toString())
-//        findNavController().navigate(action)
-        context?.toast("do Something")
+        val action = MenuFragmentDirections.actionMenuFragmentToBookDetailFragment(item.id.toString())
+        findNavController().navigate(action)
     }
 
     private fun onChildGenreClick(item: GenreEntity) {
@@ -134,5 +129,11 @@ class MenuFragment : BaseFragmentBinding() {
         else shimmerLayoutGenresMenu.visibility = View.GONE
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        if (binding.root.parent != null){
+            (binding.root.parent as ViewGroup).removeView(binding.root)
+        }
+    }
 
 }

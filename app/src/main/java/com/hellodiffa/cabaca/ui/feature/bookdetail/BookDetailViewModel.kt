@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.hellodiffa.cabaca.common.ResultState
+import com.hellodiffa.cabaca.data.remote.response.bookx.BooxResponse
 import com.hellodiffa.cabaca.data.remote.response.detail.DetailBookResponse
 import com.hellodiffa.cabaca.data.repository.BookRepository
 import com.hellodiffa.cabaca.ui.base.BaseViewModel
@@ -24,13 +25,14 @@ class BookDetailViewModel constructor(
 
 
     internal fun getBookDetail(id: String) {
-        viewModelScope.launch(Dispatchers.Main) {
+        viewModelScope.launch {
             _books.postValue(ResultState.loading())
             delay(1_500)
             try {
-                val result = async(context = Dispatchers.IO) {
+                val result = async(Dispatchers.IO){
                     repository.loadBooksDetail(id)
                 }
+
                 _books.postValue(result.await())
             } catch (e: Exception) {
                 _books.postValue(ResultState.error(e.message))
