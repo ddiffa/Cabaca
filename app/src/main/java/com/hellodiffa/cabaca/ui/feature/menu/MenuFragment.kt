@@ -1,6 +1,5 @@
 package com.hellodiffa.cabaca.ui.feature.menu
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +16,6 @@ import com.hellodiffa.cabaca.databinding.FragmentMenuBinding
 import com.hellodiffa.cabaca.ui.adapter.BookAdapter
 import com.hellodiffa.cabaca.ui.adapter.GenreAdapter
 import com.hellodiffa.cabaca.ui.base.BaseFragmentBinding
-import com.hellodiffa.cabaca.ui.feature.bookdetail.DetailBookActivity
 import com.hellodiffa.cabaca.utils.logDebbug
 import com.hellodiffa.cabaca.utils.toast
 import kotlinx.android.synthetic.main.fragment_menu.*
@@ -55,9 +53,13 @@ class MenuFragment : BaseFragmentBinding() {
     }
 
     private fun onChildBookClick(item: BookEntity) {
-        val intent = Intent(context, DetailBookActivity::class.java)
-        intent.putExtra("bookId", item.id.toString())
-        startActivity(intent)
+////        val intent = Intent(activity, DetailBookActivity::class.java)
+////        intent.putExtra("bookId", item.id.toString())
+////        startActivity(intent)
+//
+//        val action = MenuFragmentDirections.actionMenuFragmentToBookDetailFragment(item.id.toString())
+//        findNavController().navigate(action)
+        context?.toast("do Something")
     }
 
     private fun onChildGenreClick(item: GenreEntity) {

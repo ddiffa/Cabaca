@@ -1,12 +1,10 @@
 package com.hellodiffa.cabaca.ui.feature.listbook
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.hellodiffa.cabaca.R
@@ -15,8 +13,6 @@ import com.hellodiffa.cabaca.data.remote.response.bookbygenre.ResultItem
 import com.hellodiffa.cabaca.databinding.FragmentListBookBinding
 import com.hellodiffa.cabaca.ui.adapter.BookGenreAdapter
 import com.hellodiffa.cabaca.ui.base.BaseDialogFragmentBinding
-import com.hellodiffa.cabaca.ui.feature.bookdetail.DetailBookActivity
-import com.hellodiffa.cabaca.ui.feature.menu.MenuFragmentDirections
 import com.hellodiffa.cabaca.utils.toast
 import kotlinx.android.synthetic.main.fragment_list_book.*
 import org.koin.androidx.viewmodel.ext.android.getViewModel
@@ -82,9 +78,7 @@ class ListBookFragment : BaseDialogFragmentBinding() {
     }
 
     private fun onChildBookClick(item: ResultItem) {
-        val intent = Intent(context, DetailBookActivity::class.java)
-        intent.putExtra("bookId", item.id.toString())
-        startActivity(intent)
+        context?.toast("do Something")
     }
 
 
