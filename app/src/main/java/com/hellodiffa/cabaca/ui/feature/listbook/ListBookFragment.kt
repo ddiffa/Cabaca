@@ -43,6 +43,10 @@ class ListBookFragment : BaseDialogFragmentBinding() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        binding.listBookToolbar.setNavigationOnClickListener {
+            activity?.onBackPressed()
+        }
+
         observeBooks()
     }
 
@@ -51,6 +55,7 @@ class ListBookFragment : BaseDialogFragmentBinding() {
             when (it.status) {
                 ResultState.Status.SUCCESS -> {
                     if (it.data != null) bookAdapter.dataSource = it.data
+                    binding.listBookToolbar.title = it.data?.get(0)?.genreByGenreId?.title
                     loadingVisible(false)
                     viewVisible(false)
                 }

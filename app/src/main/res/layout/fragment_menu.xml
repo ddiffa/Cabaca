@@ -23,6 +23,18 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Cabaca"
+                app:titleTextColor="@android:color/white" />
+
             <TextView
                 android:id="@+id/tvGenreMenu"
                 android:layout_width="match_parent"
@@ -83,7 +95,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:fontFamily="@font/mm"
-                android:text="Buku Baru"
+                android:text="New Books"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />

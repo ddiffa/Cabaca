@@ -41,13 +41,13 @@ class BookDetailFragment : BaseDialogFragmentBinding() {
         viewModel.getBookDetail(args.bookid)
 
         binding.detailsToolbar.setNavigationOnClickListener {
-            dismiss()
+            activity?.onBackPressed()
         }
 
         observeDetail()
         binding.tvWriterDetail.setOnClickListener {
             val action =
-                BookDetailFragmentDirections.actionBookDetailFragmentToWriterDetailFragment(writerid = idWriter)
+                BookDetailFragmentDirections.actionBookDetailFragmentToWriterDetailFragment(writerid = binding.data?.writerByWriterId?.userId.toString())
             findNavController().navigate(action)
         }
     }

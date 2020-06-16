@@ -32,7 +32,7 @@ data class KaryaItem(
 	val id: Int? = null,
 
 	@Json(name="rate_sum")
-	val rateSum: Int? = null,
+	val rateSum: Double? = null,
 
 	@Json(name="writer_id")
 	val writerId: Int? = null,
