@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.hellodiffa.cabaca.R
@@ -42,6 +43,10 @@ class ListBookFragment : BaseDialogFragmentBinding() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        binding.listBookToolbar.setNavigationOnClickListener {
+            activity?.onBackPressed()
+        }
+
         observeBooks()
     }
 
@@ -50,6 +55,7 @@ class ListBookFragment : BaseDialogFragmentBinding() {
             when (it.status) {
                 ResultState.Status.SUCCESS -> {
                     if (it.data != null) bookAdapter.dataSource = it.data
+                    binding.listBookToolbar.title = it.data?.get(0)?.genreByGenreId?.title
                     loadingVisible(false)
                     viewVisible(false)
                 }
@@ -78,10 +84,17 @@ class ListBookFragment : BaseDialogFragmentBinding() {
     }
 
     private fun onChildBookClick(item: ResultItem) {
-        context?.toast("do Something")
+        val action = ListBookFragmentDirections.actionListBookFragmentToBookDetailFragment(item.id.toString())
+        findNavController().navigate(action)
     }
 
 
     override fun getTheme(): Int = R.style.AppTheme
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        if (binding.root.parent != null){
+            (binding.root.parent as ViewGroup).removeView(binding.root)
+        }
+    }
 }

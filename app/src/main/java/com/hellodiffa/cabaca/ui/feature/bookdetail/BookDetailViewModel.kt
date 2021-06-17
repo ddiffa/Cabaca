@@ -10,7 +10,6 @@ import com.hellodiffa.cabaca.data.repository.BookRepository
 import com.hellodiffa.cabaca.ui.base.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class BookDetailViewModel constructor(
@@ -24,17 +23,11 @@ class BookDetailViewModel constructor(
 
 
     internal fun getBookDetail(id: String) {
-        viewModelScope.launch(Dispatchers.Main) {
-            _books.postValue(ResultState.loading())
-            delay(1_500)
-            try {
-                val result = async(context = Dispatchers.IO) {
-                    repository.loadBooksDetail(id)
-                }
-                _books.postValue(result.await())
-            } catch (e: Exception) {
-                _books.postValue(ResultState.error(e.message))
+        viewModelScope.launch {
+            val result = async(Dispatchers.IO) {
+                repository.loadBooksDetail(id)
             }
+            _books.postValue(result.await())
         }
     }
 

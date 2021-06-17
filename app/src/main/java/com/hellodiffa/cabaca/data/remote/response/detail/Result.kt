@@ -77,7 +77,7 @@ data class Result(
 	val chapterCount: Int? = null,
 
 	@Json(name="decimal_rate")
-	val decimalRate: Int? = null,
+	val decimalRate: Double? = null,
 
 	@Json(name="cover_url")
 	val coverUrl: String,

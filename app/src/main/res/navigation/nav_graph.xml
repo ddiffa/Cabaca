@@ -34,7 +34,10 @@
         android:label="WriterDetailFragment" >
         <argument
             android:name="writerid"
-            app:argType="long" />
+            app:argType="string" />
+        <action
+            android:id="@+id/action_writerDetailFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
     </fragment>
     <dialog
         android:id="@+id/bookDetailFragment"
@@ -43,5 +46,8 @@
         <argument
             android:name="bookid"
             app:argType="string" />
+        <action
+            android:id="@+id/action_bookDetailFragment_to_writerDetailFragment"
+            app:destination="@id/writerDetailFragment" />
     </dialog>
 </navigation>

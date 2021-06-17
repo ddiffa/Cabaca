@@ -9,11 +9,8 @@ import com.hellodiffa.cabaca.data.local.entity.book.BookEntity
 import com.hellodiffa.cabaca.data.remote.response.bookbygenre.ResultItem
 import com.hellodiffa.cabaca.data.repository.BookRepository
 import com.hellodiffa.cabaca.ui.base.BaseViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 
 class ListBookViewModel constructor(
     application: Application,
@@ -37,5 +34,10 @@ class ListBookViewModel constructor(
                 _books.postValue(ResultState.error(e.message))
             }
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelScope.cancel()
     }
 }
